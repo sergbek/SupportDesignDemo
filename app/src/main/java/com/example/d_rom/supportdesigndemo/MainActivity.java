@@ -1,5 +1,6 @@
 package com.example.d_rom.supportdesigndemo;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -18,7 +19,7 @@ import android.view.View;
 
 import com.example.d_rom.supportdesigndemo.adapter.TabFragmentAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mFab = (FloatingActionButton)findViewById(R.id.fab);
+        mFab.setOnClickListener(this);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         if (viewPager != null) {
@@ -149,4 +151,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        startActivity(new Intent(MainActivity.this,SecondActivity.class));
+    }
 }

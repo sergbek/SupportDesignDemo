@@ -17,4 +17,8 @@
     <string name="snack_message">I am Snack :)</string>
     <string name="snack_action">Got it</string>
     <string name="snacke_message_2">You\'re not so hungry!</string>
+    <string name="title_activity_second">Add record</string>
+
+    <string name="button_check">Check</string>
+    <string name="input_helper_text">Field is required</string>
 </resources>
