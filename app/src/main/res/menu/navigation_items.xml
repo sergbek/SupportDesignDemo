@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_item_first"
+            android:checked="false"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/item_first"/>
+        <item
+            android:id="@+id/drawer_item_two"
+            android:checked="false"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/item_second"/>
+
+        <item
+            android:id="@+id/drawer_item_third"
+            android:checked="false"
+            android:icon="@android:drawable/ic_menu_info_details"
+            android:title="@string/item_third"/>
+
+        <item
+            android:id="@+id/section"
+            android:title="@string/section_second">
+            <menu>
+
+                <item
+                    android:id="@+id/drawer_item_fourth"
+                    android:checked="false"
+                    android:icon="@android:drawable/ic_menu_help"
+                    android:title="@string/item_fourth"/>
+
+                <item
+                    android:id="@+id/drawer_item_fives"
+                    android:checked="false"
+                    android:icon="@android:drawable/ic_menu_preferences"
+                    android:title="@string/item_fives"/>
+            </menu>
+        </item>
+    </group>
+
+</menu>

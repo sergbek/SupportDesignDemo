@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Design Demo</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="item_first">Item First</string>
+    <string name="item_second">Item Second</string>
+    <string name="item_third">Item Third</string>
+    <string name="item_fourth">Item Fourth</string>
+    <string name="section_second">Submenu</string>
+    <string name="item_fives">Item Fives</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_snack">Snack-snack:)</string>
+    <string name="snack_message">I am Snack :)</string>
+    <string name="snack_action">Got it</string>
+    <string name="snacke_message_2">You\'re not so hungry!</string>
+</resources>
