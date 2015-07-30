@@ -1,0 +1,5 @@
+<resources>
+
+    <dimen name="menu_header_top_extra_padding">25dp</dimen>
+    <dimen name="menu_header_height">205dp</dimen>
+</resources>

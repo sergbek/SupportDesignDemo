@@ -9,6 +9,7 @@
 
     <dimen name="menu_header_height">180dp</dimen>
     <dimen name="menu_header_padding">16dp</dimen>
+    <dimen name="menu_header_top_extra_padding">0dp</dimen>
     <dimen name="menu_header_text_margin_top">8dp</dimen>
 
     <dimen name="fab_compat_margin">16dp</dimen>
