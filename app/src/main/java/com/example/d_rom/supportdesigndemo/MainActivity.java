@@ -61,9 +61,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
             tabLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            tabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
                 @Override
                 public void onTabSelected(TabLayout.Tab _tab) {
+                    super.onTabSelected(_tab);
                     if (_tab.getPosition() % 2 == 0){
                         mFab.show();
                     }else {
