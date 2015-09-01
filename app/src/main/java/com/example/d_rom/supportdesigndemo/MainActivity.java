@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 @Override
                 public void onTabSelected(TabLayout.Tab _tab) {
                     super.onTabSelected(_tab);
-                    if (_tab.getPosition() % 2 == 0){
+                    if (_tab.getPosition() % 3 == 0){
                         mFab.show();
                     }else {
                         mFab.hide();
