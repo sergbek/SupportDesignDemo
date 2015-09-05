@@ -19,10 +19,11 @@ import android.view.View;
 
 import com.example.d_rom.supportdesigndemo.adapter.TabFragmentAdapter;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, TabLayout.OnTabSelectedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
     private ActionBarDrawerToggle mDrawerToggle;
     private View mContentLayout;
     private FloatingActionButton mFab;
@@ -39,9 +40,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setCollapsedTitle();
 
+        // Find our drawer view
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
+        // Find our drawer view
+        mNavigationView = (NavigationView) findViewById(R.id.navigation);
+//        mNavigationView.getMenu().add("Custom Item").setActionView(R.layout.list_item);
 
+        // Tie DrawerLayout events to the ActionBarToggle
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
                 R.string.drawer_open,  R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -55,7 +61,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
             tabLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            tabLayout.setOnTabSelectedListener(this);
+            tabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
+                @Override
+                public void onTabSelected(TabLayout.Tab _tab) {
+                    super.onTabSelected(_tab);
+                    if (_tab.getPosition() % 3 == 0){
+                        mFab.show();
+                    }else {
+                        mFab.hide();
+                    }
+                }
+
+                @Override
+                public void onTabUnselected(TabLayout.Tab _tab) {
+
+                }
+
+                @Override
+                public void onTabReselected(TabLayout.Tab _tab) {
+
+                }
+            });
         }
     }
 
@@ -81,12 +107,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
@@ -127,24 +155,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         startActivity(new Intent(MainActivity.this,SecondActivity.class));
-    }
-
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        if (tab.getPosition() % 3 == 0){
-            mFab.show();
-        }else {
-            mFab.hide();
-        }
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-
     }
 }
