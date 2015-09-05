@@ -5,6 +5,6 @@
 .DS_Store
 /build
 /captures
-/app/app.iml
 app.iml
 SupportDesignDemo.iml
+/app/app.iml
