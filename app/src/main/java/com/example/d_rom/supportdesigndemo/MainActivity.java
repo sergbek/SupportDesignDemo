@@ -40,14 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setCollapsedTitle();
 
-        // Find our drawer view
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        // Find our drawer view
         mNavigationView = (NavigationView) findViewById(R.id.navigation);
-//        mNavigationView.getMenu().add("Custom Item").setActionView(R.layout.list_item);
 
-        // Tie DrawerLayout events to the ActionBarToggle
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
                 R.string.drawer_open,  R.string.drawer_close);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -107,14 +103,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
         mDrawerToggle.syncState();
     }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggles
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
