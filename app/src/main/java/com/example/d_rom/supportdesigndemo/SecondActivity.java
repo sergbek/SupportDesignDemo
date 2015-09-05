@@ -49,4 +49,36 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
             mCustomLayout.setErrorEnabled(false);
         }
     }
+
+    public TextInputLayout getmFieldOneLayout() {
+        return mFieldOneLayout;
+    }
+
+    public void setmFieldOneLayout(TextInputLayout mFieldOneLayout) {
+        this.mFieldOneLayout = mFieldOneLayout;
+    }
+
+    public EditText getmFieldOneEdit() {
+        return mFieldOneEdit;
+    }
+
+    public void setmFieldOneEdit(EditText mFieldOneEdit) {
+        this.mFieldOneEdit = mFieldOneEdit;
+    }
+
+    public TextInputLayout getmCustomLayout() {
+        return mCustomLayout;
+    }
+
+    public void setmCustomLayout(TextInputLayout mCustomLayout) {
+        this.mCustomLayout = mCustomLayout;
+    }
+
+    public EditText getmCustomEdit() {
+        return mCustomEdit;
+    }
+
+    public void setmCustomEdit(EditText mCustomEdit) {
+        this.mCustomEdit = mCustomEdit;
+    }
 }
