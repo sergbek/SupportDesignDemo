@@ -1,5 +1,8 @@
 package com.example.d_rom.supportdesigndemo;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,5 +17,10 @@ public class Utils {
             list.add("List Item " + i);
         }
         return list;
+    }
+
+
+    public static void showToast(String message,Context context){
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show();
     }
 }
