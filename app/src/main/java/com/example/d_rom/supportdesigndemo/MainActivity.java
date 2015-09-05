@@ -19,7 +19,7 @@ import android.view.View;
 
 import com.example.d_rom.supportdesigndemo.adapter.TabFragmentAdapter;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, TabLayout.OnTabSelectedListener {
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
@@ -55,27 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
             tabLayout.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-            tabLayout.setOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(viewPager) {
-                @Override
-                public void onTabSelected(TabLayout.Tab _tab) {
-                    super.onTabSelected(_tab);
-                    if (_tab.getPosition() % 3 == 0){
-                        mFab.show();
-                    }else {
-                        mFab.hide();
-                    }
-                }
-
-                @Override
-                public void onTabUnselected(TabLayout.Tab _tab) {
-
-                }
-
-                @Override
-                public void onTabReselected(TabLayout.Tab _tab) {
-
-                }
-            });
+            tabLayout.setOnTabSelectedListener(this);
         }
     }
 
@@ -147,5 +127,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         startActivity(new Intent(MainActivity.this,SecondActivity.class));
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        if (tab.getPosition() % 3 == 0){
+            mFab.show();
+        }else {
+            mFab.hide();
+        }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+
     }
 }
