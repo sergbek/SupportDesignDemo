@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Toolbar mToolbar;
     private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
     private ActionBarDrawerToggle mDrawerToggle;
     private View mContentLayout;
     private FloatingActionButton mFab;
@@ -42,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        mNavigationView = (NavigationView) findViewById(R.id.navigation);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar,
                 R.string.drawer_open,  R.string.drawer_close);
