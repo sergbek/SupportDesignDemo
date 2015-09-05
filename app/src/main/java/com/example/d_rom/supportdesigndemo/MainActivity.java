@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onTabSelected(TabLayout.Tab _tab) {
                     super.onTabSelected(_tab);
                     if (_tab.getPosition() % 3 == 0){
+                        Utils.showToast("Tab show",MainActivity.this);
                         mFab.show();
                     }else {
                         mFab.hide();
