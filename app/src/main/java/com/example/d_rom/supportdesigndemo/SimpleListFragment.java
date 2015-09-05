@@ -28,19 +28,11 @@ public class SimpleListFragment extends Fragment {
 
         mRecyclerView = (RecyclerView)rootView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
-        mAdapter = new SimpleRecyclerAdapter(getActivity(),getDummyData());
+        mAdapter = new SimpleRecyclerAdapter(getActivity(),Utils.getDummyData());
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
         return rootView;
-    }
-
-    private List<String> getDummyData() {
-        final List<String> list = new ArrayList<>();
-        for(int i = 0; i < 50; i++){
-            list.add("List Item " + i);
-        }
-        return list;
     }
 
 
